@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Register airline company</title>
+</head>
+<body>
+    <div style="vertical-align:central;background-image:url(../Images/sign-up-background.jpg);
+         background-repeat:no-repeat; background-position:center; background-size:cover">
+    <form ng-submit="registerRequest()" name="formAirline" class="form-group" style="width:350px; margin:0 auto">
+        <fieldset>
+            <legend style="font-size:20PX">CREATE AIRLINE COMPAMY ACCOUNT</legend>
+            <div class="form-group">
+                <label>Comapny name</label>
+                <input type="text" name="airlineName" placeholder="Enter the company name" class="form-control" ng-model="formModel.companyName" ng-required="true" ng-pattern="/^[a-z A-Z 0-9]*/" />
+                <span ng-show="formAirline.airlineName.$invalid">Use chars and numbers only.</span> <!--by the pattern-->
+            </div>
+            <div class="form-group">
+                <label>login details</label>
+                <input type="email" ng-class="{'form-control is-invalid': formAirline.userAirline.$invalid ,'form-control': formAirline.userAirline.$valid}" name="userAirline" placeholder="Enter the company email" ng-model="formModel.userName" ng-required="true" />
+                <input type="password" ng-model="formModel.password" name="password" placeholder="Enter Paswword" ng-class="formAirline.password.$invalid ? 'form-control' : 'form-control is-valid'" ng-pattern="/(?=.{8})(?=.*?[0-9])(?=.*?[A-Z]).*?[a-z].*/" ng-required="true" /><!--forced the user user large chars-->
+                <small ng-show="formAirline.password.$invalid">Use 8 characters in larg, lowercase letters and numbers.</small>
+            </div>
+            <div class="form-group" ng-model="country">
+                <small>where your company from?</small>
+                <select class="custom-select" ng-required="true" name="selectCountry">
+                    <option ng-repeat="country in dataCountries.countries">{{country.CountryName}}</option> <!--make the country ngmodel -->
+                    <option name="none">None of them</option>
+                </select>
+                <!--<input ng-show="selectCountry.selected == 'None of them'" class="form-control-sm" />not working-->
+            </div>
+            <div>
+                <button type="submit" class="btn btn-danger" ng-disabled="formAirline.$invalid">
+                    Create Account
+                </button>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+</body>
+</html>

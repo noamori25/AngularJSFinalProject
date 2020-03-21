@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>create customer account</title>
+</head>
+<body>
+    <div style="vertical-align:central;background-image:url(../Images/sign-up-background.jpg); background-repeat:no-repeat; background-position:center; background-size:cover">
+        <form ng-submit="registerRequest()" name="formCustomer" class="form-group" style="width:350px; margin:0 auto">
+            <fieldset>
+                <legend>CREATE CUSTOMER ACCOUNT</legend>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" ng-model="formModel.firstName" ng-required="true" ng-pattern="/^[a-z A-Z]*$/" ng-maxlength="10" name="firstName" placeholder="Enter your first name">
+                    <span ng-show="formCustomer.firstName.$dirty && formCustomer.firstName.$invalid">Please use only letters.</span>
+                    <input type="text" class="form-control" name="lastName" ng-model="formModel.lastName" ng-required="true" ng-pattern="/^[a-z A-Z]*$/" ng-maxlength="15" placeholder="Enter your last name" />
+                    <span ng-show="formCustomer.lastName.$dirty && formCustomer.lastName.$invalid">Please use only letters.</span>
+                </div>
+                <div class="form-group">
+                    <label>Login Details</label>
+                    <input type="email" ng-model="formModel.userName" ng-required="true" ng-class="{'form-control is-invalid': formCustomer.email.$invalid ,'form-control': formCustomer.email.$valid}" name="email" aria-describedby="emailHelp" placeholder="Enter your email">
+                    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <input type="password" ng-model="formModel.password"  ng-required="true" name="password" ng-pattern="/(?=.{8})(?=.*?[0-9])(?=.*?[A-Z]).*?[a-z].*/" ng-class= "formCustomer.password.$invalid ? 'form-control' : 'form-control is-valid'" placeholder="Enter Paswword"><!--forced the user user large chars-->
+                    <small ng-show="formCustomer.password.$invalid">Use 8 characters in larg, lowercase letters and numbers.</small>
+                </div>
+                <div class="form-check disabled">
+                    <label class="form-check-label">
+                        <input class="form-check-input" name="terms" type="checkbox" ng-model="termsService" ng-required="true">
+                        I agree all the terms of service <br />
+                        <span ng-show="formCustomer.terms.$dirty && formCustomer.terms.$invalid"> please confirm the terms.</span>
+                    </label>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-danger" ng-disabled="formCustomer.$invalid">
+                        Create Account
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

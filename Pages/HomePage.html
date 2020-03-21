@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app="HomePage">
+<head>
+    <title>Home Page</title>
+    <script src="../Scripts/umd/angular.js"></script>
+    <script src="../Scripts/bootstrap/HomePage.js"></script>
+    <script src="../Scripts/umd/Angular-routing.js"></script>
+    <script src="../Scripts/umd/router.confing.js"></script>
+    <script src="../Scripts/services/data.service.js"></script>
+    <script src="../Scripts/services/service.service.js"></script>
+    <script src="../Scripts/controllers/cardCtrl.js"></script>
+    <script src="../Scripts/controllers/registerCustomerCtrl.js"></script>
+    <script src="../Scripts/controllers/registerAirlineCtrl.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <link href="../Content/bootstrap-solar.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/FutureFlights">Future flights <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/CreateCustomerAccount">Register customer <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/RegisterAirlineCompany">Register airline company <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <button ng-controller="cardCtrl" class="btn btn-danger" ng-click="open('http://localhost:60341/Pages/Search.html')">Search</button>
+        </div>
+        <div style="padding:3px">
+            <button ng-controller="cardCtrl" class="btn btn-danger" ng-click="open('http://localhost:60341/Pages/LandingFlights.html')">Landing FLights</button>
+        </div>
+        <div>
+            <button ng-controller="cardCtrl" class="btn btn-danger" ng-click="open('http://localhost:60341/Pages/DeparturesFlights.html')">Departure FLights</button>
+        </div>
+    </nav>
+    <div ui-view></div>
+</body>
+</html>

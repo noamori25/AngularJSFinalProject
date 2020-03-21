@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <ul class="nav nav-tabs" ng-init="activeTab = 'Culture'" >
+        <li ng-class="nav-item">
+            <a class="nav-link active" style="color:hotpink" ng-click="activeTab='Culture'">Culture</a>
+        </li>
+        <li ng-class="nav-item">
+            <a class="nav-link active" style="color:hotpink" ng-click="activeTab='Food'">Food</a>
+        </li>
+        <li ng-class="nav-item">
+            <a class="nav-link active" style="color:hotpink" ng-click="activeTab='Hotels'">Hotels</a>
+        </li>
+        <li ng-class="nav-item">
+            <a class="nav-link active" style="color:hotpink" ng-click="activeTab='NightLife'">Night Life</a>
+        </li>
+    </ul>
+
+    <div ng-show="activeTab=='Culture'">
+        <h4>More info about culture</h4>
+    </div>
+    <div ng-show="activeTab=='Food'">
+        <h4>More info about food</h4>
+    </div>
+    <div ng-show="activeTab=='Hotels'">
+        <h4>More info about hotels</h4>
+    </div>
+    <div ng-show="activeTab=='NightLife'">
+        <h4>More info about night life</h4>
+    </div>
+</body>
+</html>

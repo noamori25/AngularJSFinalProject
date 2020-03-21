@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Future Flights</title>
+   
+</head>
+
+<body>
+    <div>
+        <div ng-repeat="flight in dataFlights.flights" class="card text-white bg-danger mb-3" style="max-width: 20rem;margin-left:10px; margin-top:5px;display:inline-block;">
+            <h3 class="card-header">{{flight.DestinationCountry}}</h3>
+            <img style="height: 200Px; width: 100%;" ng-src="{{flight.image}}" />
+            <div class="card-body">
+                <h6 class="card-title">Airline company: {{flight.AirlineName}}</h6>
+                <h5 class="card-text">
+                    <pre style="font-size:small"> Departure: {{flight.DepartureTime}}</pre>
+                    <pre style="font-size:small"> Landing: {{flight.LandingTime}}</pre>
+                </h5>
+                <button class="btn-danger" ng-click="go('/MoreInfo')">
+                    more info
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
