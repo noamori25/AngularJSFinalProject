@@ -240,7 +240,7 @@ namespace WebAPI.Controllers
 
         private void ExecuteEmailCustomer(Customer customer)
         {
-            var key = "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";
+            var key = "SG.uRzeJTBHR9m7TH2f69YjA.pVS5F3zrks2gZrCeB-Tslb7b3O60-PTRawrxBi6eNFs";
             // var apiKey = Environment.GetEnvironmentVariable(key);
             var client = new SendGridClient(key);
             var from = new EmailAddress(ConfigurationManager.AppSettings["EmailFrom"], ConfigurationManager.AppSettings["ComapnyName"]);
@@ -255,7 +255,7 @@ namespace WebAPI.Controllers
 
         private void ExecuteEmailAirline(AirlineCompany airline)
         {
-            var key = "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";
+            var key = "SG.uRzeJTBHR9m7TH2f69YjA.pVS5F3zrks2gZrCeB-Tslb7b3O60-PTRawrxBi6eNFs";
             // var apiKey = Environment.GetEnvironmentVariable(key);
             var client = new SendGridClient(key);
             var from = new EmailAddress(ConfigurationManager.AppSettings["EmailFrom"], ConfigurationManager.AppSettings["ComapnyName"]);
